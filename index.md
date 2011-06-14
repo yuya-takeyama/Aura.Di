@@ -25,7 +25,7 @@ Instantiating the Manager
 The Aura DI package comes with a instance script that returns a new DI instance:
 
     <?php
-    $di = require '/path/to/aura.di/scripts/instance.php';
+    $di = require '/path/to/Aura.Di/scripts/instance.php';
 
 Alternatively, you can add the Aura DI `'src/'` directory to your autoloader, and then instantiate it yourself:
 
@@ -451,7 +451,7 @@ These methods work exactly the same as with the `Manager`, except the services w
     $sub = $di->newContainer('sub_name');
     
     // configure params for objects in the sub-container
-    $sub->params['Example\Pacakage\Database']['host'] = 'alt-db.example.com';
+    $sub->params['Example\Package\Database']['host'] = 'alt-db.example.com';
     
     // add an alternative Database connection to the sub-container
     $sub->set('alt_db', function() use ($sub) {
