@@ -457,7 +457,7 @@ You can use the following methods to work with the sub-container (the same as wi
 These methods work exactly the same as with the `Manager`, except the services will be on the sub-container, not the `Manager`.  For example:
 
     <?php
-    // create the sub-container
+    //Gets a sub-container by name if it exists, or creates a new one under that name if it does not.
     $sub = $di->subContainer('sub_name');
     
     // configure params for objects in the sub-container
@@ -471,7 +471,7 @@ These methods work exactly the same as with the `Manager`, except the services w
 If you need to add more services later, or modify configuration params and setters, you can retrieve the sub-container from the `Manager` and do so.
 
     <?php
-    // get the sub-container
+    //Gets a sub-container by name if it exists, or creates a new one under that name if it does not.
     $sub = $di->subContainer('sub_name');
     
     // add another service to it
