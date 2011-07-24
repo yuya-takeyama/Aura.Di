@@ -435,6 +435,16 @@ Because the sub-container is a separate container from the `Manager`, you will n
     // get a previously-created Container
     $sub = $di->getContainer('sub_name');
 
+If you are trying to get the container by `$di->getContainer('sub_name')` and if there is no container found it throws an exception.
+
+The best way to create the container if its not created and return the container if its found we can use 
+
+    <?php
+    //Gets a sub-container by name if it exists, or creates a new one under that name if it does not.
+    $sub = $di->subContainer('sub_name');
+
+What the above function does is create a new container `$sub = $di->newContainer('sub_name');` if its not already created and lastly returns `$di->getContainer('sub_name');`
+
 You can use the following methods to work with the sub-container (the same as with any `Container`):
 
 - `has()`
@@ -448,7 +458,7 @@ These methods work exactly the same as with the `Manager`, except the services w
 
     <?php
     // create the sub-container
-    $sub = $di->newContainer('sub_name');
+    $sub = $di->subContainer('sub_name');
     
     // configure params for objects in the sub-container
     $sub->params['Example\Package\Database']['host'] = 'alt-db.example.com';
@@ -462,7 +472,7 @@ If you need to add more services later, or modify configuration params and sette
 
     <?php
     // get the sub-container
-    $sub = $di->get('sub_name');
+    $sub = $di->subContainer('sub_name');
     
     // add another service to it
     $sub->set('other', function() use ($sub) {
