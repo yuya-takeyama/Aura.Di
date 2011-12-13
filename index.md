@@ -1,5 +1,5 @@
 ---
-title: The Aura DI package provides a dependency injection container system
+title: The Aura DI Package
 layout: default
 ---
 
