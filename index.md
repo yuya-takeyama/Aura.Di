@@ -1,5 +1,5 @@
 ---
-title: The Aura DI Package
+title: Aura for PHP: Dependency Injection Container
 layout: default
 ---
 
