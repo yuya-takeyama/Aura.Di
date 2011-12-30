@@ -1,5 +1,5 @@
 ---
-title: Aura for PHP: Dependency Injection Container
+title: Aura for PHP; Dependency Injection Container
 layout: default
 ---
 
